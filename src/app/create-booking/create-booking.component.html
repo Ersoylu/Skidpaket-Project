@@ -1,0 +1,14 @@
+<h3>Bokningsformular</h3>
+<p>{{skiType}}</p>
+<div>
+    <div class="form-group">
+        <label for="namn">Namn</label>
+        <input type="text" class="form-control" id="namn" [(ngModel)]="namn" placeholder="Enter Namn" />
+
+    </div>
+    <div style="float: right;">
+        <button type="submit" class="btn btn-danger" style="margin: 10px;" (click)="cancel()"> Avbryt</button>
+        <button type="submit" class="btn btn-primary" (click)="booking()"
+            style="margin: 10px 0px 10px 10px">Boka</button>
+    </div>
+</div>

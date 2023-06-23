@@ -1,0 +1,22 @@
+<div *ngFor="let t of skiEquipmentsDatalist; index as i; first as isFirst" class="card" style="margin-bottom: 10px;">
+    <div class="card-body">
+        <div class="row" style="position: relative;">
+            <div class="col-md-4">
+                <img [src]="t.imageUrl">
+            </div>
+            <div class="col-md-8">
+                <h2>{{t.header}}</h2>
+                <p>{{t.description}}</p>
+                <p *ngIf="t.isViewMore" [innerHTML]="t.extendedDescription"></p>
+
+                <button type="button" *ngIf="!t.isViewMore" class="btn btn-link" style="float: right;"
+                    (click)='viewMore(i);'>Visa mer </button>
+                <button type="button" *ngIf="t.isViewMore" class="btn btn-link" style="float: right;"
+                    (click)='viewLess(i);'>Visa mindre </button>
+
+                <button (click)='createBooking(i);' type="button" style="position: absolute; bottom: 0; right: 0;"
+                    class="btn btn-primary">Välj</button>
+            </div>
+        </div>
+    </div>
+</div>
